@@ -1,12 +1,22 @@
 package com.bipindev.JobApplication.job;
 
+import jakarta.persistence.*;
+
+@Entity
+//@Table(name="job_table")
+// if we can customer name other than class name
 public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
     private Integer minSalary;
     private Integer maxSalary;
     private String location;
+
+    public Job() {
+    }
 
     public Job(Long id, String title, String description, Integer minSalary, Integer maxSalary, String location) {
         this.id = id;
